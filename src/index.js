@@ -1,0 +1,9 @@
+
+const express = require('express');
+const routes = require('./routes');
+
+const app = express();
+
+app.use(routes);
+
+app.listen(2000, () => console.log(`app listen on port 2000`));
