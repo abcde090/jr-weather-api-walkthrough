@@ -1,10 +1,11 @@
 const express = require('express');
 const weatherRoutes = require('./routes/weather');
+const responseFormatter = require('./utils/responseFormatter');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.send('welcome');
+  responseFormatter(res, 200, 'Welcome to the weather API! Visit /api-docs for help', null);
 });
 
 router.use('/api/weather', weatherRoutes);
